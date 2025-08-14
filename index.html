@@ -5,56 +5,99 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Slot Online - UPBET</title>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
     body {
         margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(to bottom, #002b36, #003f4c);
+        font-family: 'Montserrat', sans-serif;
+        background: url('https://i.ibb.co/p10YnnV/casino-bg.jpg') no-repeat center center/cover;
         color: white;
         text-align: center;
         padding: 20px;
+        position: relative;
+        overflow-x: hidden;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        z-index: 1;
+    }
+    .content {
+        position: relative;
+        z-index: 2;
     }
     .badge {
-        background: gold;
+        background: linear-gradient(to right, gold, #ffcc00);
         color: black;
         display: inline-block;
         padding: 5px 15px;
         border-radius: 8px;
         font-weight: bold;
         margin-bottom: 15px;
+        box-shadow: 0 0 10px gold;
     }
     h1 {
         font-size: 2.5em;
         margin: 10px 0;
+        text-shadow: 0 0 15px rgba(0,0,0,0.8);
     }
     h2 {
         font-size: 1.5em;
         color: #00e6e6;
         margin-bottom: 15px;
     }
+    .bonus {
+        background: rgba(0, 230, 230, 0.15);
+        border: 1px solid #00e6e6;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-size: 1.1em;
+    }
     p {
         font-size: 1.1em;
         line-height: 1.4;
         margin-bottom: 25px;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .cta-btn {
-        background: gold;
+        background: linear-gradient(to right, gold, #ffcc00);
         color: black;
         font-size: 1.4em;
-        padding: 15px 30px;
+        padding: 15px 40px;
         border-radius: 40px;
         text-decoration: none;
         display: inline-block;
         font-weight: bold;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-        transition: transform 0.2s;
+        box-shadow: 0 0 20px gold;
+        position: relative;
+        overflow: hidden;
     }
-    .cta-btn:hover {
-        transform: scale(1.05);
+    .cta-btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -75px;
+        width: 50px;
+        height: 100%;
+        background: rgba(255,255,255,0.6);
+        transform: skewX(-20deg);
+        animation: shine 2s infinite;
+    }
+    @keyframes shine {
+        0% { left: -75px; }
+        100% { left: 125%; }
     }
     .timer {
         margin-top: 15px;
         font-size: 1.1em;
         color: #ff4d4d;
+        font-weight: bold;
     }
     .icons {
         margin-top: 30px;
@@ -65,30 +108,37 @@
     .icons img {
         width: 50px;
         height: 50px;
+        animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
     }
 </style>
 </head>
 <body>
 
-<div class="badge">Indique Amigos</div>
+<div class="overlay"></div>
+<div class="content">
+    <div class="badge">Indique Amigos</div>
 
-<h1>SLOT ONLINE</h1>
-<h2>— UPBET —</h2>
+    <h1>SLOT ONLINE</h1>
+    <h2>— UPBET —</h2>
 
-<div style="background: rgba(0, 230, 230, 0.15); border: 1px solid #00e6e6; padding: 10px; border-radius: 8px; margin-bottom: 20px;">
-    💎 Rodadas e Prêmios Exclusivos para Novos Jogadores
-</div>
+    <div class="bonus">💎 Rodadas e Prêmios Exclusivos para Novos Jogadores</div>
 
-<p>Descubra a emoção dos melhores slots online com estilo e sofisticação.  
-Grandes chances, prêmios incríveis e a confiança de jogar na UPBET!</p>
+    <p>Descubra a emoção dos melhores slots online com estilo e sofisticação.  
+    Grandes chances, prêmios incríveis e a confiança de jogar na UPBET!</p>
 
-<a href="#" class="cta-btn">🔥 REGISTRAR AGORA</a>
+    <a href="#" class="cta-btn">🔥 REGISTRAR AGORA</a>
 
-<div class="timer">⚡ Oferta expira em <span id="countdown">05:00</span></div>
+    <div class="timer">⚡ Oferta expira em <span id="countdown">05:00</span></div>
 
-<div class="icons">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Moeda">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Estrela">
+    <div class="icons">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Moeda">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Estrela">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Diamante">
+    </div>
 </div>
 
 <script>
