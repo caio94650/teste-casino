@@ -3,34 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sua Grande Chance no Cassino!</title>
+<title>Cassino Online - Sua Chance Agora!</title>
 <style>
     body {
         margin: 0;
         font-family: 'Arial', sans-serif;
         background: url('https://i.ibb.co/cCzVz1c/casino-bg.jpg') no-repeat center center/cover;
+        overflow-x: hidden;
         color: #fff;
         text-align: center;
     }
     .overlay {
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.7);
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 20px;
+        position: relative;
     }
     h1 {
-        font-size: 32px;
-        margin-bottom: 15px;
+        font-size: 34px;
         color: #FFD700;
-        text-shadow: 0 0 10px #FFD700, 0 0 20px #ff9900;
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #ff9900, 0 0 30px #FFD700;
+        margin-bottom: 10px;
+        animation: neonGlow 1.5s infinite alternate;
+    }
+    @keyframes neonGlow {
+        from { text-shadow: 0 0 5px #FFD700, 0 0 10px #ff9900; }
+        to { text-shadow: 0 0 20px #FFD700, 0 0 30px #ff9900; }
     }
     p {
         font-size: 18px;
         color: #f0f0f0;
-        margin-bottom: 25px;
-        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    .bonus {
+        background: rgba(255, 215, 0, 0.1);
+        border: 2px solid #FFD700;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: #FFD700;
+        text-shadow: 0 0 5px #ff9900;
     }
     .btn {
         display: inline-block;
@@ -43,44 +60,63 @@
         text-decoration: none;
         box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
         animation: pulse 1.5s infinite;
-    }
-    .btn:hover {
-        background: linear-gradient(45deg, #ff9900, #FFD700);
+        margin-top: 10px;
     }
     @keyframes pulse {
         0% { transform: scale(1); box-shadow: 0 0 15px #FFD700; }
         50% { transform: scale(1.05); box-shadow: 0 0 25px #ff9900; }
         100% { transform: scale(1); box-shadow: 0 0 15px #FFD700; }
     }
-    .bonus {
-        background: rgba(255, 215, 0, 0.1);
-        border: 2px solid #FFD700;
-        padding: 10px;
-        border-radius: 10px;
-        display: inline-block;
-        margin-bottom: 20px;
-        font-size: 16px;
-        color: #FFD700;
-        text-shadow: 0 0 5px #ff9900;
+    .contador {
+        font-size: 18px;
+        margin-top: 15px;
+        color: #ff4d4d;
+        font-weight: bold;
     }
-    img {
-        max-width: 100%;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    /* Fichas caindo */
+    .chip {
+        position: absolute;
+        top: -50px;
+        width: 40px;
+        animation: cair linear infinite;
+        opacity: 0.8;
+    }
+    @keyframes cair {
+        0% { transform: translateY(-50px) rotate(0deg); opacity: 0.8; }
+        100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
     }
 </style>
 </head>
 <body>
 
 <div class="overlay">
-    <h1>🎰 Sua Grande Chance Está Aqui!</h1>
-    <div class="bonus">💰 Bônus Exclusivo para Novos Jogadores</div>
-    <p>Entre agora e descubra a emoção de jogar no cassino online mais empolgante do Brasil.  
-    Rodadas incríveis, jackpots milionários e muita diversão esperam por você!</p>
-    <img src="https://i.ibb.co/g9pphVw/slot-machine.jpg" alt="Cassino">
-    <a href="http://short.up.bet.br/AAQd0" class="btn">🎯 COMEÇAR AGORA</a>
+    <h1>🎰 Cassino Online — Sua Sorte Começa Agora!</h1>
+    <div class="bonus">💎 Bônus Especial para Novos Jogadores</div>
+    <p>Entre agora no cassino online mais emocionante do Brasil. Jogos incríveis, jackpots milionários e diversão garantida!</p>
+    <a href="http://short.up.bet.br/AAQd0" class="btn">🔥 QUERO JOGAR AGORA</a>
+    <div class="contador">⚡ Oferta expira em <span id="timer">05:00</span></div>
 </div>
+
+<!-- Fichas caindo -->
+<img src="https://i.ibb.co/Wn6T6BS/chip.png" class="chip" style="left:10%; animation-duration:5s;">
+<img src="https://i.ibb.co/Wn6T6BS/chip.png" class="chip" style="left:30%; animation-duration:6s;">
+<img src="https://i.ibb.co/Wn6T6BS/chip.png" class="chip" style="left:50%; animation-duration:4s;">
+<img src="https://i.ibb.co/Wn6T6BS/chip.png" class="chip" style="left:70%; animation-duration:5.5s;">
+<img src="https://i.ibb.co/Wn6T6BS/chip.png" class="chip" style="left:90%; animation-duration:6.5s;">
+
+<script>
+    // Contador regressivo
+    let tempo = 5 * 60;
+    const timerEl = document.getElementById('timer');
+    setInterval(() => {
+        let minutos = Math.floor(tempo / 60);
+        let segundos = tempo % 60;
+        segundos = segundos < 10 ? '0' + segundos : segundos;
+        timerEl.textContent = `${minutos}:${segundos}`;
+        tempo--;
+        if (tempo < 0) tempo = 5 * 60; // Reinicia o contador
+    }, 1000);
+</script>
 
 </body>
 </html>
