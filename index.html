@@ -66,6 +66,7 @@
         box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
         animation: pulse 1.5s infinite;
         margin-top: 10px;
+        cursor: pointer;
     }
     @keyframes pulse {
         0% { transform: scale(1); box-shadow: 0 0 15px #FFD700; }
@@ -90,15 +91,44 @@
         0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
         100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
     }
+    /* Tela de rolos */
+    #slot-screen {
+        display: none;
+        background: rgba(0,0,0,0.9);
+        position: fixed;
+        top:0; left:0; width:100%; height:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 9999;
+    }
+    .reels {
+        display: flex;
+        gap: 15px;
+    }
+    .reel {
+        width: 80px;
+        height: 200px;
+        background: url('https://i.imgur.com/zXW0Rj0.png') repeat-y;
+        background-size: cover;
+        animation: spin 0.5s linear infinite;
+        border: 2px solid #FFD700;
+        border-radius: 5px;
+    }
+    @keyframes spin {
+        0% { background-position-y: 0; }
+        100% { background-position-y: 200px; }
+    }
 </style>
 </head>
 <body>
 
-<div class="overlay">
+<div class="overlay" id="main-screen">
     <h1>🎰 Slot Online — Gire e Ganhe!</h1>
     <div class="bonus">💎 Rodadas e Prêmios Especiais para Novos Jogadores</div>
     <p>Entre agora na experiência mais divertida de slots online. Grandes chances, prêmios incríveis e emoção garantida!</p>
-    <a href="http://short.up.bet.br/AAQd0" class="btn">🔥 GIRAR AGORA</a>
+    <div class="btn" onclick="startSlot()">🔥 GIRAR AGORA</div>
     <div class="contador">⚡ Oferta expira em <span id="timer">05:00</span></div>
 </div>
 
@@ -108,6 +138,16 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Gold_coin_icon.png/512px-Gold_coin_icon.png" class="coin" style="left:40%; animation-duration:4s;">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Gold_coin_icon.png/512px-Gold_coin_icon.png" class="coin" style="left:60%; animation-duration:5.5s;">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Gold_coin_icon.png/512px-Gold_coin_icon.png" class="coin" style="left:80%; animation-duration:6.5s;">
+
+<!-- Tela de rolos girando -->
+<div id="slot-screen">
+    <h1 style="color:#FFD700; text-shadow:0 0 20px #FFD700;">🎰 Girando...</h1>
+    <div class="reels">
+        <div class="reel"></div>
+        <div class="reel"></div>
+        <div class="reel"></div>
+    </div>
+</div>
 
 <script>
     // Contador regressivo
@@ -119,8 +159,17 @@
         segundos = segundos < 10 ? '0' + segundos : segundos;
         timerEl.textContent = `${minutos}:${segundos}`;
         tempo--;
-        if (tempo < 0) tempo = 5 * 60; // Reinicia o contador
+        if (tempo < 0) tempo = 5 * 60;
     }, 1000);
+
+    // Função para iniciar slot e redirecionar
+    function startSlot() {
+        document.getElementById('main-screen').style.display = 'none';
+        document.getElementById('slot-screen').style.display = 'flex';
+        setTimeout(() => {
+            window.location.href = "http://short.up.bet.br/AAQd0";
+        }, 3000);
+    }
 </script>
 
 </body>
