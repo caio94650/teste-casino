@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cassino Online - Sua Chance Agora!</title>
+<title>Slot Online - Ganhe Agora!</title>
 <style>
     body {
         margin: 0;
         font-family: 'Arial', sans-serif;
-        background: url('https://images.pexels.com/photos/1796794/pexels-photo-1796794.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center/cover;
+        background: url('https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center/cover;
         overflow-x: hidden;
         color: #fff;
         text-align: center;
-        animation: luzBorda 2s infinite;
+        border: 15px solid transparent;
+        animation: luzesBorda 2s linear infinite;
     }
-    @keyframes luzBorda {
-        0% { box-shadow: inset 0 0 20px #FFD700; }
-        50% { box-shadow: inset 0 0 40px #ff9900; }
-        100% { box-shadow: inset 0 0 20px #FFD700; }
+    @keyframes luzesBorda {
+        0% { border-image: linear-gradient(90deg, red, yellow, lime, cyan, blue, magenta, red) 1; }
+        100% { border-image: linear-gradient(450deg, red, yellow, lime, cyan, blue, magenta, red) 1; }
     }
     .overlay {
-        background: rgba(0, 0, 0, 0.75);
+        background: rgba(0, 0, 0, 0.65);
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -29,10 +29,9 @@
         position: relative;
     }
     h1 {
-        font-size: 34px;
+        font-size: 36px;
         color: #FFD700;
-        text-shadow: 0 0 10px #FFD700, 0 0 20px #ff9900, 0 0 30px #FFD700;
-        margin-bottom: 10px;
+        text-shadow: 0 0 15px #FFD700, 0 0 25px #ff9900, 0 0 35px #FFD700;
         animation: neonGlow 1.5s infinite alternate;
     }
     @keyframes neonGlow {
@@ -59,18 +58,18 @@
         display: inline-block;
         background: linear-gradient(45deg, #FFD700, #ff9900);
         color: #000;
-        padding: 15px 35px;
-        font-size: 22px;
+        padding: 15px 40px;
+        font-size: 24px;
         font-weight: bold;
         border-radius: 50px;
         text-decoration: none;
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
         animation: pulse 1.5s infinite;
         margin-top: 10px;
     }
     @keyframes pulse {
         0% { transform: scale(1); box-shadow: 0 0 15px #FFD700; }
-        50% { transform: scale(1.05); box-shadow: 0 0 25px #ff9900; }
+        50% { transform: scale(1.05); box-shadow: 0 0 30px #ff9900; }
         100% { transform: scale(1); box-shadow: 0 0 15px #FFD700; }
     }
     .contador {
@@ -79,8 +78,8 @@
         color: #ff4d4d;
         font-weight: bold;
     }
-    /* Fichas caindo */
-    .chip {
+    /* Moedas caindo */
+    .coin {
         position: absolute;
         top: -50px;
         width: 40px;
@@ -96,19 +95,19 @@
 <body>
 
 <div class="overlay">
-    <h1>🎰 Cassino Online — Sua Sorte Começa Agora!</h1>
-    <div class="bonus">💎 Bônus Especial para Novos Jogadores</div>
-    <p>Entre agora no cassino online mais emocionante do Brasil. Jogos incríveis, jackpots milionários e diversão garantida!</p>
-    <a href="http://short.up.bet.br/AAQd0" class="btn">🔥 QUERO JOGAR AGORA</a>
+    <h1>🎰 Slot Online — Gire e Ganhe!</h1>
+    <div class="bonus">💎 Rodadas e Prêmios Especiais para Novos Jogadores</div>
+    <p>Entre agora na experiência mais divertida de slots online. Grandes chances, prêmios incríveis e emoção garantida!</p>
+    <a href="http://short.up.bet.br/AAQd0" class="btn">🔥 GIRAR AGORA</a>
     <div class="contador">⚡ Oferta expira em <span id="timer">05:00</span></div>
 </div>
 
-<!-- Fichas caindo -->
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Poker_chip_icon.png" class="chip" style="left:10%; animation-duration:5s;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Poker_chip_icon.png" class="chip" style="left:30%; animation-duration:6s;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Poker_chip_icon.png" class="chip" style="left:50%; animation-duration:4s;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Poker_chip_icon.png" class="chip" style="left:70%; animation-duration:5.5s;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Poker_chip_icon.png" class="chip" style="left:90%; animation-duration:6.5s;">
+<!-- Moedas douradas caindo -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Gold_coin_icon.png/512px-Gold_coin_icon.png" class="coin" style="left:5%; animation-duration:5s;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Gold_coin_icon.png/512px-Gold_coin_icon.png" class="coin" style="left:20%; animation-duration:6s;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Gold_coin_icon.png/512px-Gold_coin_icon.png" class="coin" style="left:40%; animation-duration:4s;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Gold_coin_icon.png/512px-Gold_coin_icon.png" class="coin" style="left:60%; animation-duration:5.5s;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Gold_coin_icon.png/512px-Gold_coin_icon.png" class="coin" style="left:80%; animation-duration:6.5s;">
 
 <script>
     // Contador regressivo
