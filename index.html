@@ -3,64 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UPBET - Cassino Online</title>
+<title>Slot Online - UPBET</title>
 <style>
     body {
         margin: 0;
-        padding: 0;
         font-family: Arial, sans-serif;
-        background: linear-gradient(180deg, #0f0f1a, #1a1a2e);
+        background: linear-gradient(to bottom, #002b36, #003f4c);
         color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-    .container {
         text-align: center;
-        max-width: 420px;
         padding: 20px;
     }
-    .banner {
-        width: 100%;
-        border-radius: 12px;
+    .badge {
+        background: gold;
+        color: black;
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 8px;
+        font-weight: bold;
+        margin-bottom: 15px;
     }
     h1 {
-        font-size: 1.8rem;
-        margin: 15px 0 10px;
-        color: #ffd700;
-        font-weight: bold;
+        font-size: 2.5em;
+        margin: 10px 0;
+    }
+    h2 {
+        font-size: 1.5em;
+        color: #00e6e6;
+        margin-bottom: 15px;
     }
     p {
-        font-size: 1rem;
-        color: #ddd;
-        margin-bottom: 20px;
+        font-size: 1.1em;
+        line-height: 1.4;
+        margin-bottom: 25px;
     }
-    .btn {
-        display: inline-block;
-        background: linear-gradient(90deg, #ffcc00, #ff9900);
-        color: #000;
-        padding: 15px 25px;
-        border-radius: 8px;
-        font-size: 1.2rem;
-        font-weight: bold;
+    .cta-btn {
+        background: gold;
+        color: black;
+        font-size: 1.4em;
+        padding: 15px 30px;
+        border-radius: 40px;
         text-decoration: none;
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        display: inline-block;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        transition: transform 0.2s;
     }
-    .btn:hover {
+    .cta-btn:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+    }
+    .timer {
+        margin-top: 15px;
+        font-size: 1.1em;
+        color: #ff4d4d;
+    }
+    .icons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .icons img {
+        width: 50px;
+        height: 50px;
     }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <img src="https://cdn.up.bet.br/PROD/MEDIAS/1741745382850_b940bf39d9c105e3574a94667bdaf582.webp" alt="UPBET Cassino" class="banner">
-    <h1>Bônus Exclusivo para Novos Jogadores!</h1>
-    <p>Cadastre-se agora e aproveite rodadas grátis e prêmios incríveis no UPBET!</p>
-    <a href="COLOQUE-SEU-LINK-AQUI" class="btn">🎰 JOGAR AGORA</a>
+<div class="badge">Indique Amigos</div>
+
+<h1>SLOT ONLINE</h1>
+<h2>— UPBET —</h2>
+
+<div style="background: rgba(0, 230, 230, 0.15); border: 1px solid #00e6e6; padding: 10px; border-radius: 8px; margin-bottom: 20px;">
+    💎 Rodadas e Prêmios Exclusivos para Novos Jogadores
 </div>
+
+<p>Descubra a emoção dos melhores slots online com estilo e sofisticação.  
+Grandes chances, prêmios incríveis e a confiança de jogar na UPBET!</p>
+
+<a href="#" class="cta-btn">🔥 REGISTRAR AGORA</a>
+
+<div class="timer">⚡ Oferta expira em <span id="countdown">05:00</span></div>
+
+<div class="icons">
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Moeda">
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Estrela">
+</div>
+
+<script>
+    let time = 300;
+    const countdownEl = document.getElementById("countdown");
+    setInterval(() => {
+        if (time > 0) {
+            time--;
+            let minutes = String(Math.floor(time / 60)).padStart(2, '0');
+            let seconds = String(time % 60).padStart(2, '0');
+            countdownEl.textContent = `${minutes}:${seconds}`;
+        }
+    }, 1000);
+</script>
 
 </body>
 </html>
