@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Slot Online - UPBET</title>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
@@ -11,10 +11,11 @@
         font-family: 'Montserrat', sans-serif;
         background: url('https://i.ibb.co/p10YnnV/casino-bg.jpg') no-repeat center center/cover;
         color: white;
-        text-align: center;
-        padding: 20px;
-        position: relative;
-        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
     }
     .overlay {
         position: absolute;
@@ -25,9 +26,14 @@
         background: rgba(0,0,0,0.6);
         z-index: 1;
     }
-    .content {
+    .container {
         position: relative;
         z-index: 2;
+        max-width: 360px;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
     }
     .badge {
         background: linear-gradient(to right, gold, #ffcc00);
@@ -36,41 +42,38 @@
         padding: 5px 15px;
         border-radius: 8px;
         font-weight: bold;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         box-shadow: 0 0 10px gold;
+        font-size: 14px;
     }
     h1 {
-        font-size: 2.5em;
-        margin: 10px 0;
-        text-shadow: 0 0 15px rgba(0,0,0,0.8);
+        font-size: 28px;
+        margin: 5px 0;
     }
     h2 {
-        font-size: 1.5em;
+        font-size: 16px;
         color: #00e6e6;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
     .bonus {
         background: rgba(0, 230, 230, 0.15);
         border: 1px solid #00e6e6;
-        padding: 10px;
+        padding: 8px;
         border-radius: 8px;
-        margin-bottom: 20px;
-        font-size: 1.1em;
+        margin-bottom: 15px;
+        font-size: 14px;
     }
     p {
-        font-size: 1.1em;
+        font-size: 14px;
         line-height: 1.4;
-        margin-bottom: 25px;
-        max-width: 350px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-bottom: 20px;
     }
     .cta-btn {
         background: linear-gradient(to right, gold, #ffcc00);
         color: black;
-        font-size: 1.4em;
-        padding: 15px 40px;
-        border-radius: 40px;
+        font-size: 16px;
+        padding: 12px 25px;
+        border-radius: 30px;
         text-decoration: none;
         display: inline-block;
         font-weight: bold;
@@ -94,32 +97,32 @@
         100% { left: 125%; }
     }
     .timer {
-        margin-top: 15px;
-        font-size: 1.1em;
+        margin-top: 10px;
+        font-size: 14px;
         color: #ff4d4d;
         font-weight: bold;
     }
     .icons {
-        margin-top: 30px;
+        margin-top: 15px;
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 12px;
     }
     .icons img {
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        height: 35px;
         animation: float 3s ease-in-out infinite;
     }
     @keyframes float {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
+        50% { transform: translateY(-6px); }
     }
 </style>
 </head>
 <body>
 
 <div class="overlay"></div>
-<div class="content">
+<div class="container">
     <div class="badge">Indique Amigos</div>
 
     <h1>SLOT ONLINE</h1>
